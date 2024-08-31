@@ -1,0 +1,239 @@
+@import url('https://fonts.googleapis.com/css2?family=Pangolin&family=Poppins:wght@200&family=Rock+Salt&display=swap');
+
+/*font-family: 'Pangolin', cursive;
+font-family: 'Poppins', sans-serif;
+font-family: 'Rock Salt', cursive;*/
+
+*{
+    padding:0;
+    margin: 0;
+    box-sizing: border-box;
+}
+:root{
+    --header-color:#06D6A0;
+    --body-color:#00BD8C;
+    --text-input:#A1A1A1;
+    --note-start:#B7E4C7;
+    --note-lineS:#acd8bb;
+    --text-note:#22223B;
+    --note-end:#ffff3f;
+    --line-noteE:#eeee40;
+    background-color: var(--body-color);
+}
+header{
+    width: 100%;
+    padding: 5px 35px;
+    background-color: var(--header-color);
+}
+header >h1{
+    left: 23px;
+    font-family: 'Rock Salt', cursive;
+    font-style: normal;
+    color: #000000;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 45px;
+}
+#root{
+    width: 100%;
+}
+#root > div{
+    padding: 10px;
+}
+.texto{
+    color: #000000;
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    line-height: 25px;
+    font-weight: bold;
+    font-style: normal;
+}
+.texto >p{
+    margin-bottom: 10px;
+    padding-top: 15px;
+}
+.inputs{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    color: #000000;
+    font-family: 'Poppins', sans-serif;
+    margin-bottom: 30px;
+    font-weight: bold;
+}
+.inputs .flex-inputs > label{
+    display: block;
+}
+.inputs .flex-inputs> .filtro{
+    width: 150px;
+    background-color:rgba(255, 255, 255, 0.959);
+    border: none;
+    font-size: 16px;
+    padding: 5px 10px;
+    font-family: 'Poppins', sans-serif;
+    border-radius: 3px;
+    text-align: center;
+    color: var(--text-input);
+}
+.areas{
+    display: grid;
+    grid-template-rows: 1fr 20px 1fr;
+    grid-gap: 40px;
+    justify-items: center;
+    align-items: center;
+}
+.areas .nota{
+    width: 100%;
+    max-width: 440px;
+    height: 180px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    resize: none;
+    padding: 50px 40px 10px 40px;
+    border: none;
+    font-size: 19px;
+    font-family: 'Pangolin', cursive;
+    font-weight: 400;
+    color: var(--text-note);
+    outline: none;
+    overflow: none;
+    scroll-margin: none;
+}
+.areas .nota::-webkit-scrollbar{
+    display: none;
+}
+.areas .aqua{
+    background-color: var(--note-start);
+}
+.areas .after,
+.areas .before{
+    position: relative;
+}
+
+.areas .after::after,
+.areas .before::after{
+    position: absolute;
+    left: 0;
+    content: '';
+    top:35px;
+    width: 100%;
+    border-top: dashed;
+    border-width: 2px;
+    height: 1px;
+}
+.areas .after::after{
+    border-color: var(--note-lineS);
+    background-color: none;
+}
+.areas .before::after{
+    border-color: var(--line-noteE);
+    background-color: none;
+}   
+.areas .after::before,
+.areas .before::before{
+    position:absolute;
+    content: '';
+    bottom: 9px;
+    left: 10%;
+    width: 90%;
+    height: 40px;
+    background-color: rgba(0,0,0,0.5);
+    transform-origin: left;
+    transform:skewY(4deg);
+    z-index: -1;
+    filter: blur(5px);
+}
+.areas .cielo{
+    background-color:var(--note-end);
+}
+
+.areas .boton > .cifrar{
+    width: 300px;
+    position: relative;
+    padding: 8px 20px;
+    border: none;
+    background: #f2e9e4;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.548);
+    font-family: 'Poppins', sans-serif;
+    color: #000000;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+    outline: none;
+}
+.areas .boton > .cifrar::after{
+    left: 30%;
+}
+.areas .boton > .cifrar::before{
+    right: 30%;
+}
+.areas .boton > .cifrar::after,
+.areas .boton > .cifrar::before{
+    content: '';
+    top: 50%;
+    position: absolute;
+    width: 25%;
+    transform: scale(0);
+    height: 1px;
+    background-color: #000000;
+    transition-duration: .3s;
+}
+.areas .boton > .cifrar:hover{
+    background-color: #f2e9e4f5;
+}
+.areas .boton > .cifrar:hover::after,
+.areas .boton > .cifrar:hover::before{
+    transform: scale(1);
+}
+
+@media (min-width:360px){
+    .areas .nota{
+        font-size: 16px;
+    }
+    .areas .after,
+    .areas .before{
+        width: 300px;
+    }
+}
+@media (min-width:540px){
+    .areas .after,
+    .areas .before{
+        width: 400px; 
+    }
+}
+@media (min-width:768px){
+    .texto{
+        text-align: center;
+
+    }
+    #root > div{
+        padding: 15px 40px;
+    }
+    .areas .after,
+    .areas .before{
+        width: 400px;   
+    }
+}
+@media (min-width:1400px){
+    .areas{
+        display: grid;
+        grid-template-rows: 1fr;
+        grid-template-columns: 1fr 20px 1fr;
+    }
+    .areas .boton > .cifrar{
+        width: 200px;
+    }
+    .areas .boton > .cifrar::after,
+    .areas .boton > .cifrar::before{
+        width: 50%;
+    }
+    .texto{
+        text-align: center;
+    } 
+    .areas .after,
+    .areas .before{
+        width: 400px;
+        
+    }
+   
+}

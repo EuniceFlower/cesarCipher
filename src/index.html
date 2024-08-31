@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>César Cipher</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="shortcut icon" href="favicon.ico" class="ico" type="image/x-icon">
+  </head>
+  <body>
+    <header>
+      <h1>CipherNote</h1>
+    </header>
+    <main>
+      <div id="root">
+        <div class="texto">
+          <p>CipherNote usa el algoritmo de cifrado César, donde es necesario un número mágico positivo para poder cifrar a su preferencia su nota. </p>
+          <p>Para el cifrado y descifrado de notas, no se permite el ingreso de caracteres especiales ni de signos de puntuación.</p>
+        </div>
+        <div class="inputs">
+          <div class="flex-inputs">
+            <label for="">¿Qué desea?</label>
+            <select name="" id="" class="filtro">
+              <option value="" >Seleccione...</option>
+              <option value="">Cifrado</option>
+              <option value="">Descifrado</option>
+            </select>
+          </div>
+          <div class="flex-inputs">
+            <label for="">Número mágico</label>
+            <input type="text" class="filtro">
+          </div>
+        </div>
+        <div class="areas">
+          <div class="after">
+            <textarea class="nota aqua" name="" maxlength="90" id="ingreso"></textarea>         
+           </div>
+          <div class="boton">
+            <button class="cifrar" id="cifrar">Descifrar</button>
+          </div>
+          <div class="before">
+            <textarea class="nota cielo" readonly name=""  id="salida"></textarea>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script src="index.js" type="module"></script>
+  </body>
+</html>
